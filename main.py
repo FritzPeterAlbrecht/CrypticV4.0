@@ -15,26 +15,28 @@ if __name__ == "__main__":
     # Run programm
 
     metrics.update()
-    print("24h change:", metrics.get_daychange())
-    print("24h Skala:", metrics.scale)
-    print("7d change:", metrics.get_weekchange())
-    print("7d Skala:", metrics.wscale)
+    metrics.set_dayscale()
+    print("24h change:", metrics.daychange)
+    print("24h Skala:", metrics.day_scale)
+    #print("7d change:", metrics.get_weekchange())
+    #print("7d Skala:", metrics.wscale)
 
     uxcontroller.roi_scale()
 
-    if metrics.get_weekchange() < 0.0:
-        print("Week in the minus")
-        uxcontroller.decrease()
-    else:
-        print("Week in the plus")
-        uxcontroller.increase()
-    s(2)
-    if metrics.get_daychange() < 0.0:
-        print("Day in the minus")
-        uxcontroller.decrease()
-    else:
-        print("Day in the plus")
-        uxcontroller.increase()
+
+    # if metrics.get_weekchange() < 0.0:
+    #     print("Week in the minus")
+    #     uxcontroller.decrease()
+    # else:
+    #     print("Week in the plus")
+    #     uxcontroller.increase()
+    # s(2)
+    # if metrics.get_daychange() < 0.0:
+    #     print("Day in the minus")
+    #     uxcontroller.decrease()
+    # else:
+    #     print("Day in the plus")
+    #     uxcontroller.increase()
 
 
 
