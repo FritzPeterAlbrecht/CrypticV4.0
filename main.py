@@ -17,9 +17,7 @@ if __name__ == "__main__":
     # Run programm
     metrics.update()
     dbg.print("24h change: " + str(metrics.daychange))
-    dbg.print("24h Skala: " + str(metrics.day_scale))
     dbg.print("7d change:" + str(metrics.weekchange))
-    dbg.print("7d Skala:" + str(metrics.week_scale))
 
     # fire the LED Shim animation
     uxcontroller.roi_scale()

@@ -2,6 +2,10 @@ import json
 import requests
 import math
 
+
+#################################################################################### The Metrics Class is responsible for fetching and processing the Data #####
+################################################################################
+
 class Metrics:
 
     def __init__(self, config, dbg):
@@ -11,11 +15,10 @@ class Metrics:
         self.config = config
         self.daychange = float
         self.weekchange = float
-        self.day_scale = 0 # don't know if this is still needed
-        self.week_scale = 0 # don't know if this is still needed
         self.led_count = 8
         self.led_to_lit = 0
 
+    # API Call Coinmarketcap.com and get all data for the set coin
     def update(self):
 
         apikey = self.config.get_api_key()

@@ -23,10 +23,11 @@ class UXController:
     # function for Blinkt! Module animation if change has positive value
     def increase(self, change, scale):
 
+        bright = self.config.blinkt_brightness
+
         rate = round(change / scale)
         led_limit = rate if rate < 8 else 8
 
-        print("--------->" + str(led_limit))
 
         self.dbg.print("Number of value: " + str(scale) + " " + "LEDs: " + str(led_limit))
 
@@ -81,6 +82,9 @@ class UXController:
         duration = self.config.blinkt_speed
 
         for i in range(0, led_limit):
+
+            #blinkt.set_pixel(i, r[i], g[i], b[i], bright)
+            #blinkt.show()
 
             self.dbg.print(i)
             time.sleep(duration)
@@ -150,6 +154,10 @@ class UXController:
         i = 0
 
         while i > rate:
+
+            #blinkt.set_pixel(i, r[i], g[i], b[i], bright)
+            #blinkt.show()
+
             self.dbg.print(i)
             time.sleep(duration)
 
@@ -179,13 +187,13 @@ class UXController:
 
         for i in range(pixel_count):
             self.dbg.print(i)
+            #ledshim.set_pixel(i, r[i], g[i], b[i])
+            #ledshim.show()
 
             time.sleep(duration)
 
             # slow down iteration time set in config
             duration += self.config.shim_speed_decrease
-
-            #ledshim.set_pixel(i, r[i], g[i], b[i])
 
 ################################################################################
 
