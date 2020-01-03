@@ -26,10 +26,16 @@ class Configuration:
             self.scroller_speed = c["ScrollerSpeed"]
             # Brightness of the Scrollphat HD
             self.scroller_brightness = c["ScrollerBrightness"]
+            # Main Speed of the Blinkt! Animatons
+            self.blinkt_speed = c["BlinktSpeed"]
             # Slowdown of the Blinkt! animation with increasing value
             self.blinkt_speed_decrease = c["BlinktSpeedDecrease"]
             # Brightness of the Blinkt! Module
             self.blinkt_brightness = c["BlinktBrightness"]
+            # LED Shim Animation Speed
+            self.shim_speed = c["LEDShimSpeed"]
+            # LED Shim Animation Speed Decrease
+            self.shim_speed_decrease = c["LEDShimSpeedDecrease"]
 
 
     def get_api_key(self):
@@ -51,10 +57,19 @@ class Configuration:
         return self.scroller_speed
 
     def get_scroller_brightness(self):
-        return self.get_scroller_brightness
+        return self.scroller_brightness
+
+    def get_blinkt_speed(self):
+        return self.blinkt_speed
 
     def get_blinkt_speed_decrease(self):
-        return self.get_blinkt_speed_decrease
+        return self.blinkt_speed_decrease
 
     def get_blinkt_brightness(self):
         return self.blinkt_brightness
+
+    def get_led_shim_speed(self):
+        return self.shim_speed
+
+    def get_led_shim_speed_decrease(self):
+        return self.shim_speed_decrease

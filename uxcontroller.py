@@ -17,7 +17,6 @@ class UXController:
         self.metrics = metrics
         self.config = config
         self.color_controller = color_controller
-        self.blinkt_speed = 0.1
 
 ################################################################################
 
@@ -79,7 +78,7 @@ class UXController:
             b = self.color_controller.get_half_up_blue()
             self.dbg.print("Color Set Half Blue:" + str(b))
 
-        duration = self.blinkt_speed
+        duration = self.config.blinkt_speed
 
         for i in range(0, led_limit):
 
@@ -147,7 +146,7 @@ class UXController:
             b = self.color_controller.get_half_down_blue()
             self.dbg.print("Color Set Half Blue:" + str(b))
 
-        duration = self.blinkt_speed
+        duration = self.config.blinkt_speed
         i = 0
 
         while i > rate:
@@ -176,7 +175,7 @@ class UXController:
         b = self.color_controller.get_led_shim_blue()
         self.dbg.print("b: " + str(b))
 
-        duration = self.blinkt_speed
+        duration = self.config.shim_speed
 
         for i in range(pixel_count):
             self.dbg.print(i)
@@ -184,7 +183,7 @@ class UXController:
             time.sleep(duration)
 
             # slow down iteration time set in config
-            duration += self.config.blinkt_speed_decrease
+            duration += self.config.shim_speed_decrease
 
             #ledshim.set_pixel(i, r[i], g[i], b[i])
 
