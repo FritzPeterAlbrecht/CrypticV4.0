@@ -15,11 +15,9 @@ if __name__ == "__main__":
     uxcontroller = UXController(metrics, config, color_config, dbg)
 
     # Run programm
-
     metrics.update()
-    #metrics.set_dayscale()
-    #dbg.print("24h change: " + str(metrics.daychange))
-    #dbg.print("24h Skala: " + str(metrics.day_scale))
+    dbg.print("24h change: " + str(metrics.daychange))
+    dbg.print("24h Skala: " + str(metrics.day_scale))
     dbg.print("7d change:" + str(metrics.weekchange))
     dbg.print("7d Skala:" + str(metrics.week_scale))
 
@@ -99,11 +97,10 @@ if __name__ == "__main__":
                 sleep(timeout)
                 scale *= 2
 
-    scale = .5
+    scale = 0.5 # had to reset the scale, dig further later
 
-    # day in the plus
+    # daychange in the plus
     if metrics.daychange > 0.0:
-
 
         dbg.print("daychange in the plus!")
 
@@ -137,7 +134,7 @@ if __name__ == "__main__":
                 sleep(timeout)
                 scale *= 2
 
-    # day in the minus
+    # daychange in the minus
     elif metrics.daychange < 0.0:
         dbg.print("day in the minus")
 
@@ -181,8 +178,5 @@ S2    2   2   2   2   2   2   2   2   = 16
 S3    4   4   4   4   4   4   4   4   = 32%
 
 Kommentare hier:
-aber schau mal in decrease deklarierst du ja auch led_limit aber nutzt es gar nicht, nee, was ich nicht blicke, vorhin war die ausgabe doch perfekt und ich meinte super, jetzt nur noch details, und ann hast du debug aus gestellt andere prints eingebaut und seitdem ist die ausgabe durcheinander, was ist passiert? ich meine dass du auch in "led_limit = rate if rate > -8 else -8" was geändert hast, war die erste 8 am anfang nicht positiv? nicht in decrease... es lief ja
-naja, werde schon finden wos hakt
-
 
 '''

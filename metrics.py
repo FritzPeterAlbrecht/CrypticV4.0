@@ -11,8 +11,8 @@ class Metrics:
         self.config = config
         self.daychange = float
         self.weekchange = float
-        self.day_scale = 0
-        self.week_scale = 0
+        self.day_scale = 0 # don't know if this is still needed
+        self.week_scale = 0 # don't know if this is still needed
         self.led_count = 8
         self.led_to_lit = 0
 
@@ -39,6 +39,8 @@ class Metrics:
         self.weekchange = 8.0#output['data'][coinid]['quote'][currency]['percent_change_7d']
 
         self.actual_value = amount * float(self.price)
+
+        # construct the string for Scrollphat HD Ticker
         self.ticker = str(self.rank) + ' ' + str(self.symbol) + ' ' + "%.3f" % self.price + ' ' + "%.2f" % self.daychange + '% ' + "%.2f" % self.actual_value + '€'
 
 # calculate the actual return of investment
@@ -48,5 +50,5 @@ class Metrics:
 
 '''
 Kommentarfunktion ist eingeschaltet:
-Außerdem musste led_to_lit gelimited werden, den wenn der wert 8 ist, dann möchte die erste runde mit skala 0.5 16 Lampen anschalten, siehe increase...
+
 '''
