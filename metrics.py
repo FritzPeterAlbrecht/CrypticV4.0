@@ -34,9 +34,9 @@ class Metrics:
         self.rank = 23#str(output['data'][coinid]['cmc_rank'])
         self.symbol = "IOTA"#str(output['data'][coinid]['symbol'])
         self.price = 0.145#output['data'][coinid]['quote'][currency]['price']
-        self.daychange = -12.0#output['data'][coinid]['quote'][currency]['percent_change_24h']
+        self.daychange = -4.0#output['data'][coinid]['quote'][currency]['percent_change_24h']
 
-        self.weekchange = 8.0#output['data'][coinid]['quote'][currency]['percent_change_7d']
+        self.weekchange = 4.0#output['data'][coinid]['quote'][currency]['percent_change_7d']
 
         self.actual_value = amount * float(self.price)
 

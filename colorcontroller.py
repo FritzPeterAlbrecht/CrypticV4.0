@@ -111,8 +111,8 @@ class ColorController:
 
     # return the color values for LED Shim Module
     def get_led_shim_red(self):
-        return self.led_shim_red
+        return self.shim_red
     def get_led_shim_green(self):
-        return self.led_shim_green
+        return self.shim_green
     def get_led_shim_blue(self):
-        return self.led_shim_blue
+        return self.shim_blue

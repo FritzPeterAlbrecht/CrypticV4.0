@@ -23,6 +23,7 @@ if __name__ == "__main__":
 
     # fire the LED Shim animation
     uxcontroller.roi_scale()
+    sleep(0.5)
 
     # Set start parameters for Blinkt! Module Animations
     scale = 0.5
