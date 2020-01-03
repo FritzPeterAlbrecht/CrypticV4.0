@@ -3,7 +3,8 @@ import requests
 import math
 
 
-#################################################################################### The Metrics Class is responsible for fetching and processing the Data #####
+################################################################################
+#### The Metrics Class is responsible for fetching and processing the Data #####
 ################################################################################
 
 class Metrics:
