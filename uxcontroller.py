@@ -1,5 +1,5 @@
 import time
-# import blinkt
+#import blinkt
 # import scrollphat
 # import ledshim
 
@@ -29,7 +29,7 @@ class UXController:
         led_limit = rate if rate < 8 else 8
 
 
-        self.dbg.print("Number of value: " + str(scale) + " " + "LEDs: " + str(led_limit))
+        #self.dbg.print("Number of value: " + str(scale) + " " + "LEDs: " + str(led_limit))
 
         # set the colors for scale 4
         if scale == 4:
@@ -81,12 +81,14 @@ class UXController:
 
         duration = self.config.blinkt_speed
 
+        ln = 7
+
         for i in range(0, led_limit):
 
-            #blinkt.set_pixel(i, r[i], g[i], b[i], bright)
+            #blinkt.set_pixel(ln, r[ln], g[i], b[ln], brightness = bright)
             #blinkt.show()
-
-            self.dbg.print(i)
+            self.dbg.print(ln)
+            ln -= 1
             time.sleep(duration)
 
             # slow down iteration time set in config
@@ -96,6 +98,8 @@ class UXController:
 
     # function for Blinkt! Module animation if change has negative value
     def decrease(self, change, scale):
+
+        bright = self.config.blinkt_brightness
 
         rate = round(change / scale)
         led_limit = rate if rate > -8 else -8
@@ -151,19 +155,24 @@ class UXController:
             self.dbg.print("Color Set Half Blue:" + str(b))
 
         duration = self.config.blinkt_speed
+
         i = 0
+        ln = 0
 
         while i > rate:
 
-            #blinkt.set_pixel(i, r[i], g[i], b[i], bright)
+            #blinkt.set_pixel(ln, r[ln], g[ln], b[ln], brightness = bright)
             #blinkt.show()
 
-            self.dbg.print(i)
+            #self.dbg.print(i)
+            self.dbg.print(ln)
+
+            i -= 1
+            ln += 1
             time.sleep(duration)
 
             # slow down iteration time set in config
             duration += self.config.blinkt_speed_decrease
-            i -= 1
 
             if i == -8:
                 break
