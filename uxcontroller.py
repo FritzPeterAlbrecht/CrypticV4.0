@@ -164,7 +164,6 @@ class UXController:
             #blinkt.set_pixel(ln, r[ln], g[ln], b[ln], brightness = bright)
             #blinkt.show()
 
-            #self.dbg.print(i)
             self.dbg.print(ln)
 
             i -= 1
@@ -175,14 +174,18 @@ class UXController:
             duration += self.config.blinkt_speed_decrease
 
             if i == -8:
+                i = 0
+                ln = 0
                 break
 
 ################################################################################
 
     # Animate the return of invest on the LED Shim
     def roi_scale(self):
+
         pixel_value = int(int(self.config.get_coin_invest()) / 28)
         pixel_count = int(self.metrics.actual_value / pixel_value)
+
         self.dbg.print("Value per ROI LED: " + str(pixel_value) + "\nNumber of ROI LED:" + str(pixel_count))
 
         r = self.color_controller.get_led_shim_red()
