@@ -25,6 +25,9 @@ class UXController:
 
         bright = self.config.blinkt_brightness
 
+        #blinkt.clear()
+        #blinkt.show()
+
         rate = round(change / scale)
         led_limit = rate if rate < 8 else 8
 
@@ -100,6 +103,9 @@ class UXController:
     def decrease(self, change, scale):
 
         bright = self.config.blinkt_brightness
+
+        #blinkt.clear()
+        #blinkt.show()
 
         rate = round(change / scale)
         led_limit = rate if rate > -8 else -8
