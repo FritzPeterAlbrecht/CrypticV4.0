@@ -9,7 +9,7 @@
     "BlinktBrightness": 0.2,
     "BlinktSpeed": 0.01,
     "BlinktSpeedDecrease": 0.05,
-    "LEDShimBrightness": 0.5,
+    "LEDShimBrightness": 1.0,
     "LEDShimSpeed": 0.01,
     "LEDShimSpeedDecrease": 0.03
 }
