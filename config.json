@@ -2,13 +2,13 @@
     "APIKey": "5451b6a0-06f7-4a7a-85b0-8bb65e28be74",
     "CoinID": "1720",
     "Currency": "EUR",
-    "CoinInvest": 1000,
-    "CoinAmount": 5000,
+    "CoinInvest": 2525.52,
+    "CoinAmount": 7030.50,
     "ScrollerSpeed": 0.2,
     "ScrollerBrightness": 0.2,
     "BlinktBrightness": 0.2,
-    "BlinktSpeed": 0.1,
-    "BlinktSpeedDecrease": 0.04,
+    "BlinktSpeed": 0.01,
+    "BlinktSpeedDecrease": 0.05,
     "LEDShimSpeed": 0.01,
-    "LEDShimSpeedDecrease": 0.02
+    "LEDShimSpeedDecrease": 0.03
 }

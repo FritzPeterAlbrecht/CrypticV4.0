@@ -1,7 +1,7 @@
 import time
-#import blinkt
+import blinkt
 # import scrollphat
-# import ledshim
+import ledshim
 
 
 ################################################################################
@@ -24,6 +24,9 @@ class UXController:
     def increase(self, change, scale):
 
         bright = self.config.blinkt_brightness
+        
+        blinkt.clear()
+        blinkt.show()
 
         rate = round(change / scale)
         led_limit = rate if rate < 8 else 8
@@ -85,8 +88,8 @@ class UXController:
 
         for i in range(0, led_limit):
 
-            #blinkt.set_pixel(ln, r[ln], g[i], b[ln], brightness = bright)
-            #blinkt.show()
+            blinkt.set_pixel(ln, r[ln], g[ln], b[ln], brightness = bright)
+            blinkt.show()
             self.dbg.print(ln)
             ln -= 1
             time.sleep(duration)
@@ -100,6 +103,9 @@ class UXController:
     def decrease(self, change, scale):
 
         bright = self.config.blinkt_brightness
+        
+        blinkt.clear()
+        blinkt.show()
 
         rate = round(change / scale)
         led_limit = rate if rate > -8 else -8
@@ -161,8 +167,8 @@ class UXController:
 
         while i > rate:
 
-            #blinkt.set_pixel(ln, r[ln], g[ln], b[ln], brightness = bright)
-            #blinkt.show()
+            blinkt.set_pixel(ln, r[ln], g[ln], b[ln], brightness = bright)
+            blinkt.show()
 
             self.dbg.print(ln)
 
@@ -185,6 +191,9 @@ class UXController:
 
         pixel_value = int(int(self.config.get_coin_invest()) / 28)
         pixel_count = int(self.metrics.actual_value / pixel_value)
+        
+        ledshim.clear()
+        ledshim.show()
 
         self.dbg.print("Value per ROI LED: " + str(pixel_value) + "\nNumber of ROI LED:" + str(pixel_count))
 
@@ -196,13 +205,21 @@ class UXController:
         self.dbg.print("b: " + str(b))
 
         duration = self.config.shim_speed
+        
+        ln = 27
 
         for i in range(pixel_count):
-            self.dbg.print(i)
-            #ledshim.set_pixel(i, r[i], g[i], b[i])
-            #ledshim.show()
+            self.dbg.print(ln)
+            ledshim.set_pixel(ln, r[ln], g[ln], b[ln])
+            ledshim.show()
 
             time.sleep(duration)
+            
+            ln -= 1
+            
+            if ln == 0:
+                ln = 27
+                break
 
             # slow down iteration time set in config
             duration += self.config.shim_speed_decrease

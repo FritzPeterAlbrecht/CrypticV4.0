@@ -29,18 +29,18 @@ class Metrics:
         amount = float(self.config.get_coin_amount())
 
         # Auskommentiert weil sonst zu viele API Calls an CMC gehen was Credits verbraucht
-        #r = requests.get(
-        #    'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=' + coinid + '&convert=' + currency,
-        #headers={'X-CMC_PRO_API_KEY': apikey, 'Accept': 'application/json'})
+        r = requests.get(
+            'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=' + coinid + '&convert=' + currency,
+        headers={'X-CMC_PRO_API_KEY': apikey, 'Accept': 'application/json'})
 
-        #output = r.json()
+        output = r.json()
 
-        self.rank = 23#str(output['data'][coinid]['cmc_rank'])
-        self.symbol = "IOTA"#str(output['data'][coinid]['symbol'])
-        self.price = 0.145#output['data'][coinid]['quote'][currency]['price']
-        self.daychange = -14.0#output['data'][coinid]['quote'][currency]['percent_change_24h']
+        self.rank = str(output['data'][coinid]['cmc_rank'])
+        self.symbol = str(output['data'][coinid]['symbol'])
+        self.price = output['data'][coinid]['quote'][currency]['price']
+        self.daychange = output['data'][coinid]['quote'][currency]['percent_change_24h']
 
-        self.weekchange = 4.0#output['data'][coinid]['quote'][currency]['percent_change_7d']
+        self.weekchange = output['data'][coinid]['quote'][currency]['percent_change_7d']
 
         self.actual_value = amount * float(self.price)
 
