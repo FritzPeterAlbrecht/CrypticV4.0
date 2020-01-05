@@ -169,4 +169,4 @@ if __name__ == "__main__":
 
         #uxcontroller.scroller()
 
-        sleep(400)
+        sleep(600)
