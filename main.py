@@ -125,6 +125,7 @@ if __name__ == "__main__":
                 dbg.print("Skala:" + str(scale))
                 uxcontroller.decrease(metrics.daychange, scale)
                 sleep(timeout)
+<<<<<<< HEAD
                 scale *= 2
         elif metrics.daychange >= -16:
             dbg.print("daychange bis -16%")
@@ -140,3 +141,32 @@ if __name__ == "__main__":
                 uxcontroller.decrease(metrics.daychange, scale)
                 sleep(timeout)
                 scale *= 2
+=======
+
+            elif metrics.daychange >= -8:
+                dbg.print("daychange bis -8%")
+                for i in range(0,2):
+                    dbg.print("Skala:" + str(scale))
+                    uxcontroller.decrease(metrics.daychange, scale)
+                    sleep(timeout)
+                    scale *= 2
+
+            elif metrics.daychange >= -16:
+                dbg.print("daychange bis -16%")
+                for i in range(0,3):
+                    dbg.print("Skala:" + str(scale))
+                    uxcontroller.decrease(metrics.daychange, scale)
+                    sleep(timeout)
+                    scale *= 2
+
+            else: # > -16:
+                dbg.print("daychange bis -32%")
+                for i in range(0,4):
+                    dbg.print("Skala:" + str(scale))
+                    uxcontroller.decrease(metrics.daychange, scale)
+                    sleep(timeout)
+                    scale *= 2
+        
+        uxcontroller.scroller()
+        sleep(400)
+>>>>>>> 2643d20290f86b04932310d7e2484bc0935003bb
