@@ -28,7 +28,7 @@ class Metrics:
         invest = self.config.get_coin_invest()
         amount = float(self.config.get_coin_amount())
 
-        # Auskommentiert weil sonst zu viele API Calls an CMC gehen was Credits verbraucht
+        # API Call to coinmarketcap.com
         r = requests.get(
             'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=' + coinid + '&convert=' + currency,
         headers={'X-CMC_PRO_API_KEY': apikey, 'Accept': 'application/json'})
@@ -51,8 +51,3 @@ class Metrics:
     def get_roi(self):
         self.roi = float(self.actual_value) - float(self.config.get_coin_invest())
         return self.roi
-
-'''
-Kommentarfunktion ist eingeschaltet:
-
-'''
