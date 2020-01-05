@@ -1,9 +1,9 @@
 {
-    "APIKey": "5451b6a0-06f7-4a7a-85b0-8bb65e28be74",
+    "APIKey": "YOUR_COINMARKETCAP_API_KEY",
     "CoinID": "1720",
     "Currency": "EUR",
-    "CoinInvest": 2525.52,
-    "CoinAmount": 7030.50,
+    "CoinInvest": 1000.00,
+    "CoinAmount": 5000.00,
     "ScrollerSpeed": 0.2,
     "ScrollerBrightness": 0.2,
     "BlinktBrightness": 0.2,
