@@ -1,6 +1,6 @@
 import time
 import blinkt
-import scrollphat
+#import scrollphat
 import ledshim
 
 
