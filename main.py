@@ -169,5 +169,6 @@ if __name__ == "__main__":
                     uxcontroller.decrease(metrics.daychange, scale)
                     sleep(timeout)
                     scale *= 2
-
+        
+        uxcontroller.scroller()
         sleep(400)
