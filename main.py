@@ -6,10 +6,8 @@ from uxcontroller import UXController
 from time import sleep
 
 if __name__ == "__main__":
-    
+
     while True:
-        
-        sleep(400)
 
         # setup
         config = Configuration("./config.json")
@@ -17,7 +15,7 @@ if __name__ == "__main__":
         dbg = Debugger(False)
         metrics = Metrics(config, dbg)
         uxcontroller = UXController(metrics, config, color_config, dbg)
-        
+
         # Run programm
         metrics.update()
         print("24h change: " + str(metrics.daychange))
@@ -102,7 +100,7 @@ if __name__ == "__main__":
 
         scale = 0.5 # had to reset the scale, dig further later
         sleep(2)
-        
+
         # daychange in the plus
         if metrics.daychange > 0.0:
 
@@ -171,5 +169,5 @@ if __name__ == "__main__":
                     uxcontroller.decrease(metrics.daychange, scale)
                     sleep(timeout)
                     scale *= 2
-    
-    #sleep(300)
+
+        sleep(400)

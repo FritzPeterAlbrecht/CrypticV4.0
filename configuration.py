@@ -32,6 +32,8 @@ class Configuration:
             self.blinkt_speed_decrease = c["BlinktSpeedDecrease"]
             # Brightness of the Blinkt! Module
             self.blinkt_brightness = c["BlinktBrightness"]
+            #LED Shim Brightness
+            self.shim_bright = c["LEDShimBrightness"]
             # LED Shim Animation Speed
             self.shim_speed = c["LEDShimSpeed"]
             # LED Shim Animation Speed Decrease
