@@ -6,10 +6,10 @@ from uxcontroller import UXController
 from time import sleep
 
 if __name__ == "__main__":
-
+    sleep(10)
     # setup
-    config = Configuration("./config.json")
-    color_config = ColorController("./colors.json")
+    config = Configuration("/home/pi/PythonScripts/crypticV4/CrypticV4.0/config.json")
+    color_config = ColorController("/home/pi/PythonScripts/crypticV4/CrypticV4.0/colors.json")
     dbg = Debugger(False)
     metrics = Metrics(config, dbg)
     uxcontroller = UXController(metrics, config, color_config, dbg)
