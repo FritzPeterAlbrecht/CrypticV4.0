@@ -10,8 +10,8 @@ if __name__ == "__main__":
     sleep(10)
 
     # setup
-    config = Configuration("/home/pi/PythonScripts/crypticV4/CrypticV4.0config.json")
-    color_config = ColorController("/home/pi/PythonScripts/crypticV4CrypticV4.0/colors.json")
+    config = Configuration("/home/pi/PythonScripts/crypticV4/CrypticV4.0/config.json")
+    color_config = ColorController("/home/pi/PythonScripts/crypticV4/CrypticV4.0/colors.json")
     dbg = Debugger(False)
     metrics = Metrics(config, dbg)
     uxcontroller = UXController(metrics, config, color_config, dbg)
