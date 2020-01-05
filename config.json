@@ -1,5 +1,5 @@
 {
-    "APIKey": "5451b6a0-06f7-4a7a-85b0-8bb65e28be74",
+    "APIKey": "YOUR_COINMARKETCAP_API_KEY",
     "CoinID": "1720",
     "Currency": "EUR",
     "CoinInvest": 1000,
