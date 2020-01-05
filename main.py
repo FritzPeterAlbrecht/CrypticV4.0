@@ -96,8 +96,8 @@ if __name__ == "__main__":
                     sleep(timeout)
                     scale *= 2
 
-            scale = 0.5 # had to reset the scale, dig further later
-            sleep(2)
+        scale = 0.5 # had to reset the scale, dig further later
+        sleep(2)
 
         # daychange in the plus
         if metrics.daychange > 0.0:
