@@ -29,7 +29,8 @@ if __name__ == "__main__":
 
         # Set start parameters for Blinkt! Module Animations
         scale = 0.5
-        timeout = 0.2
+        timeout = config.blinkt_seq_break
+        seq_break = config.blinkt_weekday_break
 
         # weekchange in the plus
         if metrics.weekchange > 0.0:
@@ -98,8 +99,8 @@ if __name__ == "__main__":
                     sleep(timeout)
                     scale *= 2
 
-        scale = 0.5 # had to reset the scale, dig further later
-        sleep(2)
+        scale = 0.5
+        sleep(seq_break)
 
         # daychange in the plus
         if metrics.daychange > 0.0:

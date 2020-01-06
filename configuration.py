@@ -32,13 +32,16 @@ class Configuration:
             self.blinkt_speed_decrease = c["BlinktSpeedDecrease"]
             # Brightness of the Blinkt! Module
             self.blinkt_brightness = c["BlinktBrightness"]
+            # Blinkt break time between sequences
+            self.blinkt_seq_break = c["BlinktSeqBreak"]
+            # Blinkt break time between week and day animations
+            self.blinkt_weekday_break = c["BlinktWeekDayBreak"]
             #LED Shim Brightness
             self.shim_bright = c["LEDShimBrightness"]
             # LED Shim Animation Speed
             self.shim_speed = c["LEDShimSpeed"]
             # LED Shim Animation Speed Decrease
             self.shim_speed_decrease = c["LEDShimSpeedDecrease"]
-
 
     def get_api_key(self):
         return self.api_key
