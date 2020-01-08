@@ -1,19 +1,25 @@
 ## CrypticV4.0
-Crypto Coin Ticker for a Raspberry Pi with a Scrollphat HD, LEDShim, and one Blinkt! Module
+
+Crypto Coin Ticker for a Raspberry Pi or Zero WH  with a Scrollphat HD, LEDShim, and one Blinkt! Module
 
 #### Prerequisites
-1 x Blinkt Module
-1 X LEDShim
-1 x ScrollphatHD
-1 x Pin Extension
-1 x Pi Hat Hacker
+
+1 x Blinkt Module - https://shop.pimoroni.de/products/blinkt
+1 X LEDShim - https://shop.pimoroni.de/products/led-shim
+1 x ScrollphatHD - https://shop.pimoroni.de/products/scroll-phat-hd
+1 x Pi Hat Hacker - https://shop.pimoroni.de/products/pico-hat-hacker
+1 x Pin Extension - https://shop.pimoroni.de/products/male-40-pin-2x20-hat-header?variant=19570193348
 
 #### Features
-The Blinkt! 8 LED module you will see the daily and weekly change of your chosen coin in three different scales: 0.5% / 2% / 4% per LED - so you have a minimum percentual change of 0.5% and maximum percentuale change of 32%.
 
-The LEDShim will show the ROI - Return on Investment on a 28 LED scale.
+The Blinkt! 8 LED module you will show the daily and weekly change of your chosen coin in three different scales: 0.5% / 2% / 4% per LED - so you have a minimum percentual change of 0.5% and maximum percentuale change of 32%. You can set the colors in the colors.json and some more settings in the config.json
+
+The LEDShim will show the ROI - Return on Investment on a 28 LED scale. 
 
 The ScrollphatHD will be used as for a scrolling ticker like this: [rank] - ticker symbol - actual Price - daily change % - total value of your coins
+
+
+
 
 #### Configuration file in json for settings
 
@@ -36,3 +42,11 @@ The ScrollphatHD will be used as for a scrolling ticker like this: [rank] - tick
 | LEDShimSpeedDecrease | sets the slowdown of the LED Shim animation |
 
 #### Example configuration for the Blinkt! colors
+```
+"half_up":
+    {
+        "r": [0, 0, 0, 0, 0, 0, 0, 0],
+        "g": [160, 140, 120, 80, 40, 20, 10, 0],
+        "b": [200, 200, 200, 220, 220, 250, 250, 250]
+    },
+```
