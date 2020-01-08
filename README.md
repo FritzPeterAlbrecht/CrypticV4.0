@@ -16,11 +16,13 @@ Crypto Coin Ticker for a Raspberry Pi or Zero WH  with a Scrollphat HD, LEDShim,
 
 #### Features
 
-The Blinkt! 8 LED module you will show the daily and weekly change of your chosen coin in three different scales: 0.5% / 2% / 4% per LED - so you have a minimum percentual change of 0.5% and maximum percentuale change of 32%. You can set the colors in the colors.json and some more settings in the config.json
+The Blinkt! 8 LED module you will show the daily and weekly change of your chosen coin in four different scales: 0.5% / 1% / 2% / 4% per LED - so you have a minimum percentual change of 0.5% and maximum percentual change of 32%. Depending on the direction of the animation and the color range you can read if it shows a positive or negative value.
 
 The LEDShim will show the ROI - Return on Investment on a 28 LED scale. 
 
 The ScrollphatHD will be used as for a scrolling ticker like this: [rank] - ticker symbol - actual Price - daily change % - total value of your coins
+
+You can set the colors in the colors.json and some more settings in the config.json
 
 
 
@@ -85,7 +87,24 @@ So if you want to change your colors, make sure you are following the directions
 
 #### Dependencies
 
-In order to run Cryptic V4.0 you need to install some modules on your system:
+In order to run Cryptic V4.0 you need to install some modules on your system.
+
+Install the Python3 Blinkt Library
+```sh
+$ sudo pip3 install blinkt
+```
+
+Install the Python3 LED Shim Library
+```sh
+$ sudo pip3 install buttonshim
+```
+
+Install the Pythno3 LED Shim Library
+```sh
+$ sudo pip3 install scrollphathd
+```
+
+Install requests
 ```sh
 $ pip3 install requests
 ```
