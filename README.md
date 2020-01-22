@@ -14,13 +14,18 @@ Crypto Coin Ticker for a Raspberry Pi or Zero WH  with a Scrollphat HD, LEDShim,
 
 1 Pin Extension - https://shop.pimoroni.de/products/male-40-pin-2x20-hat-header?variant=19570193348
 
+1 x Pin Extension 3mm - https://shop.pimoroni.de/products/2x20-pin-gpio-header-for-raspberry-pi-2-b-a?variant=6983087172
+
 #### Features
 
 The Blinkt! 8 LED module you will show the daily and weekly change of your chosen coin in four different scales: 0.5% / 1% / 2% / 4% per LED - so you have a minimum percentual change of 0.5% and maximum percentual change of 32%. Depending on the direction of the animation and the color range you can read if it shows a positive or negative value.
 
-The LEDShim will show the ROI - Return on Investment on a 28 LED scale. 
+The LEDShim will show the ROI - Return on Investment on a 28 LED scale.
 
 The ScrollphatHD will be used as for a scrolling ticker like this: [rank] - ticker symbol - actual Price - daily change % - total value of your coins
+````
+[22] IOTA 0.234 3.25% 1234.56€
+````
 
 You can set the colors in the colors.json and some more settings in the config.json
 
@@ -32,20 +37,22 @@ You can set the colors in the colors.json and some more settings in the config.j
 | Setting | Function |
 | ------- | -------- |
 | APIKey | In order to make Cryptic V4.0 work, you need an account at "https://coinmarketcap.com/api/" |
-| CoinID | coin ID from CMC you want to track | 
-| Currency | currency conversion for example "USD", "GBP" or "BTC". There are many conversions possible |
+| CoinID | Sets the coin ID from CMC you want to track |
+| Currency | Sets the currency conversion for example "USD", "GBP" or "BTC". There are many possible conversions |
 | CoinInvest | To calculate the "return of investment" you need to set the amount of paid fiat |
-| CoinAmount | The amount of your holdings (Tokens) |
-| ScrollerSpeed | sets the speed of the scrolling ticker an the scrollphat HD |
-| ScrollerBrightness | brightness of the scrollphat HD |
-| BlinktBrightness | brightness of the blinkt module |
-| BlinktSpeed | basic speed of the blinkt animations (7 day / 24 h) |
-| BlinktSpeedDecrease | slow down the speed of the blinkt with every LED which lites up |
-| BlinktSeqBreak | sets the break between the different blinkt percentage scales in seconds |
-| BlinktWeekDayBreak | sets the break time between 7 Day and 24h animations on the blinkt in seconds |
-| LEDShimBrightness | sets the brightness of the LED Shim |
-| LEDShimSpeed | basic speed of the LED Shim animation |
-| LEDShimSpeedDecrease | sets the slowdown of the LED Shim animation |
+| CoinAmount | Sets the amount of your holdings (Tokens) to calculate ROI |
+| NetworkDelay | Sets the time in seconds to wait for the network connection. If you use LAN you may set it to 0 |
+| RefreshTime | Sets the refresh interval in seconds. The more often you update, the more credits will be used! |
+| ScrollerSpeed | Sets the scroll speed for the Ticker shown on the ScrollphatHD |
+| ScrollerBrightness | Sets the brightness of the ScrollphatHD LED's |
+| BlinktBrightness | Sets the brightness of the Blinkt Module |
+| BlinktSpeed | Sets the basic speed of the Blinkt animations |
+| BlinktSpeedDecrease | Sets the slowdown of the Blinkt animations |
+| BlinktSeqBreak | Sets the break time in seconds between each sequence of the Blinkt Module |
+| BlinktWeekDayBreak | Sets the break time in seconds between week and day animations |
+| LEDShimBrightness | Sets the brightness of the LED Shim (ROI) LED's |
+| LEDShimSpeed | Sets the general speed of the LED Shim (ROI) animation |
+| LEDShimSpeedDecrease | Sets the slowdown of the LED Shim (ROI) animation |
 
 #### Example configuration for the Blinkt! colors
 
@@ -99,7 +106,7 @@ Install the Python3 LED Shim Library
 $ sudo pip3 install buttonshim
 ```
 
-Install the Pythno3 LED Shim Library
+Install the Python3 LED Shim Library
 ```sh
 $ sudo pip3 install scrollphathd
 ```
