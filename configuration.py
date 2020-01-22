@@ -22,6 +22,10 @@ class Configuration:
             self.invest = c["CoinInvest"]
             # Amount of tokens
             self.coin_amount = c["CoinAmount"]
+            # Network delay time
+            self.network_delay = c["NetworkDelay"]
+            # General update time
+            self.refresh_time = c["RefreshTime"]
             # Speed of the Textscroller on Scrollphat HD
             self.scroller_speed = c["ScrollerSpeed"]
             # Brightness of the Scrollphat HD
@@ -57,6 +61,12 @@ class Configuration:
 
     def get_coin_amount(self):
         return self.coin_amount
+
+    def get_network_dealy_time(self):
+        return self.network_delay
+
+    def get_refresh_time(self):
+        return self.refresh_time
 
     def get_scroller_speed(self):
         return self.scroller_speed

@@ -4,6 +4,8 @@
     "Currency": "EUR",
     "CoinInvest": 1000,
     "CoinAmount": 5000,
+    "NetworkDelay": 10,
+    "RefreshTime": 590,
     "ScrollerSpeed": 0.2,
     "ScrollerBrightness": 0.2,
     "BlinktBrightness": 0.2,
@@ -14,5 +16,4 @@
     "LEDShimBrightness": 1.0,
     "LEDShimSpeed": 0.01,
     "LEDShimSpeedDecrease": 0.02
-
 }

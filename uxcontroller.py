@@ -183,7 +183,7 @@ class UXController:
 
 ################################################################################
 
-    # Animate the return of invest on the LED Shim
+    # Animate the return on investment on the LED Shim
     def roi_scale(self):
 
         pixel_value = int(int(self.config.get_coin_invest()) / 28)
@@ -196,6 +196,7 @@ class UXController:
 
         self.dbg.print("Value per ROI LED: " + str(pixel_value) + "\nNumber of ROI LED:" + str(pixel_count))
 
+        # set the colors
         r = self.color_controller.get_led_shim_red()
         self.dbg.print("r: " + str(r))
         g = self.color_controller.get_led_shim_green()
@@ -225,6 +226,7 @@ class UXController:
 
 ################################################################################
 
+    # Ticker on the scrollphat hd
     def scroller(self):
 
         if self.metrics.price >= 0.36:
