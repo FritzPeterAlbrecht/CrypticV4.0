@@ -21,8 +21,8 @@ if __name__ == "__main__":
         # Run programm
         metrics.update()
         print("##### WELCOME TO CRYPTIC V4.0 ####")
-        print("CrypticV4.0 is set to refresh every: " + str(config.get_refresh_time()) + " sec.")
-        print("CoinID is set to: " + str(config.get_coin_id()) + ' ' + str(metrics.symbol))
+        print("Refresh time: " + str(config.get_refresh_time()) + " sec.")
+        print("Coin ID: " + str(config.get_coin_id()) + ' ' + str(metrics.symbol))
         print("24h change: " + str(metrics.daychange))
         print("7d change: " + str(metrics.weekchange))
 
