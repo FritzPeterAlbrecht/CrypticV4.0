@@ -16,7 +16,7 @@ if __name__ == "__main__":
         color_config = ColorController("/home/pi/PythonScripts/CrypticV4.0/colors.json")
         dbg = Debugger(False)
         metrics = Metrics(config, dbg)
-        uxcontroller = UXController(metrics, config, color_config, dbg)
+        uxcontroller = UXController(metrics, config, color_config)
 
         # Run programm
         metrics.update()
