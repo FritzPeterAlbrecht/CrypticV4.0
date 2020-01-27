@@ -23,8 +23,8 @@ if __name__ == "__main__":
         print("##### WELCOME TO CRYPTIC V4.0 #####")
         print("Refresh time: " + str(config.get_refresh_time()) + " sec.")
         print("Coin ID: " + str(config.get_coin_id()) + ' ' + str(metrics.symbol))
-        print("24h change: " + str(metrics.daychange))
-        print("7d change: " + str(metrics.weekchange))
+        print("24h change: " + str(metrics.daychange) + "%")
+        print("7d change: " + str(metrics.weekchange) + "%")
 
         # fire the LED Shim animation
         uxcontroller.roi_scale()
