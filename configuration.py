@@ -10,7 +10,7 @@ class Configuration:
         with open(filename, 'r') as f:
             c = json.load(f)
 
-            print("loaded configuration: ", c)
+            #print("loaded configuration: ", c)
 
             # API Key for your Coin Market Cap Account
             self.api_key = c["APIKey"]
@@ -22,6 +22,10 @@ class Configuration:
             self.invest = c["CoinInvest"]
             # Amount of tokens
             self.coin_amount = c["CoinAmount"]
+            # Network delay time
+            self.network_delay = c["NetworkDelay"]
+            # General update time
+            self.refresh_time = c["RefreshTime"]
             # Speed of the Textscroller on Scrollphat HD
             self.scroller_speed = c["ScrollerSpeed"]
             # Brightness of the Scrollphat HD
@@ -32,11 +36,16 @@ class Configuration:
             self.blinkt_speed_decrease = c["BlinktSpeedDecrease"]
             # Brightness of the Blinkt! Module
             self.blinkt_brightness = c["BlinktBrightness"]
+            # Blinkt break time between sequences
+            self.blinkt_seq_break = c["BlinktSeqBreak"]
+            # Blinkt break time between week and day animations
+            self.blinkt_weekday_break = c["BlinktWeekDayBreak"]
+            #LED Shim Brightness
+            self.shim_bright = c["LEDShimBrightness"]
             # LED Shim Animation Speed
             self.shim_speed = c["LEDShimSpeed"]
             # LED Shim Animation Speed Decrease
             self.shim_speed_decrease = c["LEDShimSpeedDecrease"]
-
 
     def get_api_key(self):
         return self.api_key
@@ -52,6 +61,12 @@ class Configuration:
 
     def get_coin_amount(self):
         return self.coin_amount
+
+    def get_network_dealy_time(self):
+        return self.network_delay
+
+    def get_refresh_time(self):
+        return self.refresh_time
 
     def get_scroller_speed(self):
         return self.scroller_speed

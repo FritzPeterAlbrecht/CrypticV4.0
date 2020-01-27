@@ -1,7 +1,7 @@
 import time
-#import blinkt
-# import scrollphat
-# import ledshim
+import blinkt
+#import scrollphat
+import ledshim
 
 
 ################################################################################
@@ -25,14 +25,11 @@ class UXController:
 
         bright = self.config.blinkt_brightness
 
-        #blinkt.clear()
-        #blinkt.show()
+        blinkt.clear()
+        blinkt.show()
 
         rate = round(change / scale)
         led_limit = rate if rate < 8 else 8
-
-
-        #self.dbg.print("Number of value: " + str(scale) + " " + "LEDs: " + str(led_limit))
 
         # set the colors for scale 4
         if scale == 4:
@@ -88,8 +85,8 @@ class UXController:
 
         for i in range(0, led_limit):
 
-            #blinkt.set_pixel(ln, r[ln], g[i], b[ln], brightness = bright)
-            #blinkt.show()
+            blinkt.set_pixel(ln, r[ln], g[ln], b[ln], brightness = bright)
+            blinkt.show()
             self.dbg.print(ln)
             ln -= 1
             time.sleep(duration)
@@ -104,8 +101,8 @@ class UXController:
 
         bright = self.config.blinkt_brightness
 
-        #blinkt.clear()
-        #blinkt.show()
+        blinkt.clear()
+        blinkt.show()
 
         rate = round(change / scale)
         led_limit = rate if rate > -8 else -8
@@ -167,8 +164,8 @@ class UXController:
 
         while i > rate:
 
-            #blinkt.set_pixel(ln, r[ln], g[ln], b[ln], brightness = bright)
-            #blinkt.show()
+            blinkt.set_pixel(ln, r[ln], g[ln], b[ln], brightness = bright)
+            blinkt.show()
 
             self.dbg.print(ln)
 
@@ -186,14 +183,20 @@ class UXController:
 
 ################################################################################
 
-    # Animate the return of invest on the LED Shim
+    # Animate the return on investment on the LED Shim
     def roi_scale(self):
 
         pixel_value = int(int(self.config.get_coin_invest()) / 28)
         pixel_count = int(self.metrics.actual_value / pixel_value)
 
+        bright = self.config.shim_bright
+
+        ledshim.clear()
+        ledshim.show()
+
         self.dbg.print("Value per ROI LED: " + str(pixel_value) + "\nNumber of ROI LED:" + str(pixel_count))
 
+        # set the colors
         r = self.color_controller.get_led_shim_red()
         self.dbg.print("r: " + str(r))
         g = self.color_controller.get_led_shim_green()
@@ -203,22 +206,59 @@ class UXController:
 
         duration = self.config.shim_speed
 
+        ln = 27
+
         for i in range(pixel_count):
-            self.dbg.print(i)
-            #ledshim.set_pixel(i, r[i], g[i], b[i])
-            #ledshim.show()
+            self.dbg.print(ln)
+            ledshim.set_pixel(ln, r[ln], g[ln], b[ln], brightness = bright)
+            ledshim.show()
 
             time.sleep(duration)
+
+            ln -= 1
+
+            if ln == 0:
+                ln = 27
+                break
 
             # slow down iteration time set in config
             duration += self.config.shim_speed_decrease
 
 ################################################################################
 
+    # Ticker on the scrollphat hd
     def scroller(self):
-        pass
 
-'''
-Kommentare:
+        if self.metrics.price >= 0.36:
 
-'''
+            scrollphat.clear()
+            scrollphat.show()
+            scrollphat.write_string('HODL', x=0, y=0, brightness=1.0)
+            scrollphat.show()
+
+        else:
+
+            loopcounter = 0
+            loop = 500
+            text = self.metrics.ticker
+
+            print(text)
+
+            scrollphat.clear()
+            scrollphat.show()
+
+            scrollphat.write_string(text, x=50, y=0, brightness = 0.18)
+
+            scrollphat.rotate(180)
+
+            while loopcounter != loop:
+
+                scrollphat.show()
+                scrollphat.scroll(1)
+                time.sleep(0.024)
+                loopcounter = loopcounter + 1
+
+                if loopcounter == loop:
+                    scrollphat.clear()
+                    scrollphat.show()
+                    break
